@@ -1,0 +1,124 @@
+\documentclass{report}
+\usepackage{homework}
+\solstrue
+
+\renewcommand{\hmwkTitle}{Homework 2}
+
+\begin{document}
+\mktitle
+
+\begin{problem}
+
+\newcommand{\ENDL}{$<$CR$>$$<$LF$>$}
+
+Consider the following string of ASCII characters that were captured by $Wireshark$ when the browser sent an HTTP GET message (i.e., this is the actual content of an HTTP GET message). The characters \texttt{\ENDL{}} are carriage-return and line-feed characters. Answer the following questions, indicating where in the HTTP GET message below you find the answer.\\
+
+\begin{raggedright}
+\texttt{GET /classes/spring17/cs118/project-1.html HTTP/1.1\ENDL\\
+Host: web.cs.ucla.edu\ENDL\\
+Connection: keep-alive\ENDL\\
+Upgrade-Insecure-Requests: 1\ENDL\\
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10\_12\_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\ENDL\\
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\ENDL\\
+Referer: http://web.cs.ucla.edu/classes/spring17/cs118/homeworks.html\ENDL\\
+Accept-Encoding: gzip, deflate, sdch\ENDL\\
+Accept-Language: en-US,en;q=0.8,lv;q=0.6,ru;q=0.4\ENDL\\
+If-None-Match: "5a17-54c4847c4f640-gzip"\ENDL\\
+If-Modified-Since: Mon, 03 Apr 2017 19:36:49 GMT\ENDL\\
+}
+\end{raggedright}
+
+\begin{enumerate}
+\item What is the \textbf{full} URL of the document requested by the browser?
+\item What version of HTTP is the browser running?
+\item What type of browser initiates this message? Why is the browser type needed in an HTTP  request message?
+\item Can you find the IP Address of the host on which the browser is running from the captured HTTP request?
+\end{enumerate}
+
+\begin{answer}{30em}
+    Write your answer here
+\end{answer}
+
+\end{problem}
+
+
+\newpage
+
+
+
+\begin{problem}
+For each of the questions below, describe answer in terms of low-level packet sequences, drops, or network-level packet reordering.
+
+\begin{enumerate}
+  
+\item A specific case where HTTP/1.1 wins in performance compared to HTTP/1.0
+
+\item A specific case where HTTP with web caching wins in performance compared to HTTP without caching
+
+\end{enumerate}
+
+\begin{answer}{30em}
+    Write your answer here
+\end{answer}
+
+\end{problem}
+
+\newpage
+
+
+
+
+\begin{problem}
+Suppose within your Web browser you click on a link to obtain a Web page. The IP address for the associated  URL is cached in your local host, so a DNS look-up is not needed. Suppose that the Web page associated with the link is a small HTML file, consisting only of references to 100 very small objects on the same server. Let $RTT_0$ denote the RTT between the local host and the server containing the object. How much time elapses (in terms of $RTT_0$) from when you click on the link until your host receives all of the objects, if you are using:
+\begin{enumerate}
+		\item HTTP/1.0 without parallel TCP connections?
+		\item HTTP/1.0 with parallel TCP connections?
+		\item HTTP/1.1 without parallel connections, but with pipelining?
+\end{enumerate}
+
+Ignore any processing, transmission, or queuing delays in your calculation.\\
+
+  \begin{answer}{37em}
+  Write your answer here
+  \end{answer}
+
+\end{problem}
+
+\newpage
+
+
+\begin{problem}
+BitTorrent is a communication protocol for peer-to-peer file sharing which is used to distribute data (or files) over the Internet.
+	\begin{enumerate}
+		
+		\item Consider a new peer A that joins BitTorrent swarm without possessing any chunks. Since peer A has nothing to upload, peer A cannot become a top uploader for any of the other peers. How then will peer A get the first chunk?
+		
+		\item Explain why BitTorrent is primarily useful for popular files but not for unpopular files.
+		
+		\item Consider two DHTs (Distributed Hash Table) with a mesh overlay topology and a circular overlay topology, respectively. What are the advantages and disadvantages of each design?
+		
+	\end{enumerate}
+
+  \begin{answer}{35em}
+  Write your answer here
+  \end{answer}
+
+\end{problem}
+
+\newpage
+
+
+
+\begin{problem}
+The server tries to distribute a file of $F=15Gbits$ to $N$ clients (peers). The server has an upload rate of $u_{s}=30Mbps$, and each peer has a download rate of $d_{p}=2Mbps$ and upload rate of $u_{p}=1Mbps$. How long does it take to distribute if there are 1,000 peers for both \textbf{client-server distribution} and \textbf{P2P distribution}. \\
+
+  \begin{answer}{35em}
+  Write your answer here
+  \end{answer}
+
+\end{problem}
+
+
+
+
+\end{document}

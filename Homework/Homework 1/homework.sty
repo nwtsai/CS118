@@ -1,0 +1,111 @@
+\ProvidesPackage{homework}
+
+%%-------------------------------------------------------------
+%% Switch
+%%-------------------------------------------------------------
+\newif\ifsols 
+
+%%-------------------------------------------------------------
+%% packages
+%%-------------------------------------------------------------
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\usepackage{environ}
+\usepackage{url}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+% Homework Specific Information
+\newcommand{\hmwkTitle}{Homework}
+\newcommand{\hmwkClass}{CS 118 Winter 2019}
+\newcommand{\hmwkClassTime}{}
+\newcommand{\hmwkClassInstructor}{}
+\newcommand{\hmwkAuthorName}{}
+
+\usepackage{color,soul}
+\usepackage{xspace}
+\newcommand{\TODO}[1]{\hl{\textbf{TODO:} #1}\xspace}
+\newcommand{\HL}[1]{\hl{#1}}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\lhead{\hmwkAuthorName}                                                 %
+\chead{\hmwkClass\ : \hmwkTitle}                                        %
+%\rhead{\firstxmark}                                                    %
+\rhead{}                                                                %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                  %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\mktitle}
+{
+   \title{\vspace{2in}\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}\vspace{3in}}
+   \date{}
+   \author{\textbf{\hmwkAuthorName}}
+}
+
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newlength{\labelLength}
+\newcommand{\labelAnswer}[2]
+{
+   \settowidth{\labelLength}{#1}%
+   \addtolength{\labelLength}{0.25in}%
+   \changetext{}{-\labelLength}{}{}{}%
+   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#2\end{minipage}}%
+   \marginpar{\fbox{#1}}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   \changetext{}{+\labelLength}{}{}{}
+}%
+
+\newcommand{\problemName}{}%
+\newcounter{problemCounter}%
+\newenvironment{problem}[1][Problem \arabic{problemCounter}]%
+{
+   \stepcounter{problemCounter}%
+   \renewcommand{\problemName}{#1}%
+   \section*{\problemName}%
+   \enterProblemHeader{\problemName}
+}%
+{\exitProblemHeader{\problemName}}%
+
+
+% \newenvironment{problemAnswer}[1]% % Required parameter: vertical space for the answer block
+% {
+% }%
+% {
+% }
+\NewEnviron{answer}[1]{%
+  \noindent\fbox{%
+    \begin{minipage}[c][#1][t]{\columnwidth}%
+      \ifsols%
+      \color{DarkBlue}\BODY%
+      \else
+      \raggedleft \scriptsize Write your solution to \problemName\ in this box
+      \hfill
+      \fi%
+    \end{minipage}%
+  }%
+}

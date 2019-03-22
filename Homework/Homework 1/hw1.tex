@@ -1,0 +1,105 @@
+\documentclass{report}
+\usepackage{homework}
+\solstrue
+
+\renewcommand{\hmwkTitle}{Homework 1}
+
+\begin{document}
+\mktitle
+
+\begin{problem}
+`traceroute' is a computer network diagnostic tool for displaying the route (path) and measuring transit delays of packets across an Internet Protocol (IP) network. In this problem, you will use the `traceroute' command to understand how packets route to a destination.
+
+\begin{enumerate}
+\item Run \textit{traceroute} command to find a route to `ucla.edu'. How many hops are there in between your local host to the destination? Copy and paste the result on your console in the answer box. (If you are using Windows Command Prompt, then use `\textit{tracert}' command instead.)
+\item Run \textit{traceroute} command to find a route to `columbia.edu'. Copy and paste the result into the answer box.
+\item Compare two results in terms of the number of hops and the delays.
+\end{enumerate}
+
+    \begin{answer}{30em}
+    Write your answer here
+    \end{answer}
+
+\end{problem}
+
+\newpage
+
+
+\begin{problem}
+Host A is sending real-time voice over a packet-switched network. Host A converts analog voice to a digital 128 kbps bit stream on the fly. Host A then groups 1,600 bytes into a packet. Assume that the 1,600 bytes packet already includes all headers. There is one link between Hosts A and B; its transmission rate is 3 Mbps and its propagation delay is 20 msec. As soon as Host A gathers a packet, it sends it to Host B. As soon as Host B receives an entire packet, it converts the packet’s bits to an analog signal. How much time elapses from the time a bit is created (from the original analog signal at Host A) until the bit is decoded (as part of the analog signal at Host B)? In this problem, do not consider acknowledgement (response) from Host B.
+
+    \begin{answer}{30em}
+    Write your answer here
+    \end{answer}
+
+\end{problem}
+
+\newpage
+
+
+\begin{problem}
+Tow hosts, A and B are separated by 20,000 kilometers and are connected by a direct link of $R=2Mbps$. Suppose the propagation speed over the link is $2.5*10^{8} meters/sec$.
+
+\begin{enumerate}
+\item Consider sending a file of 800,000 bits from Host A to Host B. Suppose the file is sent continuously as one large message. What is the maximum number of bits that will be in the link at any given time?
+\item How long does it take to send the file, assuming it is sent continuously?
+\item Suppose now the file is broken up into 20 packets with each packet containing 40,000 bits. Suppose that each packet is acknowledged by the receiver and the transmission time of an acknowledgment packet is negligible. Finally, assume that the sender cannot send a packet until the preceding one is acknowledged. How long does it take to send the file?
+\end{enumerate}
+
+    \begin{answer}{30em}
+    Write your answer here
+    \end{answer}
+
+\end{problem}
+
+\newpage
+
+
+\begin{problem}
+
+Alice and Bob are working remotely on a course project and are using \texttt{git} as the version control software.
+
+\begin{enumerate}
+\item Is it true that one must have GitHub/GitLab account to use git?
+\item What is(are) the command(s) to initialize a local git repository?
+\item Do Alice and Bob both must initialize local git repository?  If no, what are the alternative?
+\item Let's consider that Alice modified the file \texttt{server.cpp}:
+    \begin{enumerate}
+    \item What git commands Alice needs to save modifications in the local git repository
+    \item What git commands Alice needs to upload saved modifications to GitHub
+    \item What git commands Bob needs to get Alice's changes and apply them to the local repository
+    \end{enumerate}
+\item Let's consider that both Alice and Bob modified the file \texttt{server.cpp} and Alice was first to successfully upload saved modifications (commit) to GitHub
+  \begin{enumerate}
+  \item Can Bob upload his changes without any additional actions? If no, why?
+  \item If actions needed, list git commands that Bob will need to use to share his modifications with Alice.
+  \end{enumerate}
+\end{enumerate}
+
+  \begin{answer}{37em}
+  Write your answer here
+  \end{answer}
+
+\end{problem}
+
+\newpage
+
+
+\begin{problem}
+
+You will learn some basic usages of \texttt{Vagrant} in your projects.
+
+\begin{enumerate}
+\item What is Vagrant mainly used for?
+\item What is VirtualBox used for?
+\item What is \textit{Vagrantfile}?
+\item List at least five commands you can use with Vagrant.
+\end{enumerate}
+
+  \begin{answer}{35em}
+  Write your answer here
+  \end{answer}
+
+\end{problem}
+
+\end{document}
